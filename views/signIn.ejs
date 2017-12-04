@@ -1,0 +1,20 @@
+<%- contentFor('body') %>
+<div class="login-box">
+	<h2>Log in here</h2>
+	<form action="/signIn" method="POST" class="submitSignIn">
+		<p>Email</p>
+		<input type="text" name="email" placeholder="Enter Email">
+		<p>Username</p>
+		<p type="subtxt">This should be different from your Email</p> 
+		<input type="text" name="username" placeholder="Enter Username">
+		<p>Password</p>
+		<p type="subtxt">Password should contain one uppercase, one lowercase letter, one number, and one special char</p>
+		<input type="password" name="password" placeholder="******">
+		<div class="submitButton">
+			<input type="submit" name="signin" value="Sign In">
+		</div>
+		<a href="#">Forgot Password?</a>
+		<br></br>
+		<a href="#">Not a member? Sign Up</a>
+	</form>
+</div>
