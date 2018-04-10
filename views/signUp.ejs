@@ -1,0 +1,41 @@
+<%- contentFor('body') %>
+
+<div class="signUp-box">
+	<h2>Register Here</h2>
+	<form action="/signUp" method="POST" class="submitSignUp">
+		<p>Email</p>
+		<% if (error) { %>
+			<% if ("email" in error) { %>
+				<p type="errortxt"><%- error["email"] %></p>
+			<% } %>
+			<input type="text" name="email" value = "<%- email %>">
+		<% } else { %>
+			<input type="text" name="email" placeholder="Enter Email">
+		<% } %>
+		<p>Name</p>
+		<p type="subtxt">This should be different from your Email</p> 
+		<% if (error) { %>
+			<% if ("name" in error) { %>
+				<p type="errortxt"><%- error["name"] %></p>
+			<% } %>
+			<input type="text" name="name" value= "<%- name %>" >
+		<% } else { %>
+			<input type="text" name="name" placeholder="Enter Name">
+		<% } %>
+		<p>Password</p>
+		<p type="subtxt">Password should contain one uppercase, one lowercase letter, one number, and one special char</p>
+		<% if (error) { %>
+			<% if ("password" in error) { %>
+				<p type="errortxt"><%- error["password"] %></p>
+			<% } %>
+			<input type="password" name="password" value= "<%- password %>" >
+		<% } else { %>
+			<input type="password" name="password" placeholder="******">
+		<% } %>
+		<div class="submitButton">
+			<input type="submit" name="signin" value="Sign Up">
+		</div>
+		<a type="bottomlink" href="/signIn">Already a member? Login</a>
+	</form>
+</div>
+

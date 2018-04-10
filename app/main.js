@@ -10,3 +10,8 @@ $(".header").click(function(){
 	//console.log(prefix.value); 
 })
 
+/*$(".signUp-box input").on('input propertychange', function() {
+	console.log($(this).value)
+})*/
+
+

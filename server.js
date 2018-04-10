@@ -2,6 +2,7 @@ var express = require('express');
 var expressLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
+var mongoose = require('mongoose');
 var app = express();
 var port = 9090;
 
@@ -12,6 +13,9 @@ app.use(expressLayouts);
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(expressValidator());
+
+mongoose.connect('mongodb://localhost/test');
+
 
 
 //delgate routes.js as the app's router
